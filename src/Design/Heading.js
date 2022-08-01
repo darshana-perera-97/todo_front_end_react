@@ -6,7 +6,7 @@ export default function Heading() {
       <p
         style={{
           margin: "0px",
-          padding: "15px 30px",
+          padding: "15px 40px",
           fontWeight: "bold",
           fontSize: "25px",
           background: "#1969c6",
