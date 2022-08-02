@@ -1,4 +1,5 @@
 import React from "react";
+import CreateTodo from "./CreateTodo";
 
 export default function Bottom() {
   return (
@@ -11,7 +12,7 @@ export default function Bottom() {
       }}
     >
       <p style={{ margin: "0px", padding: "8px 40px", color: "white" }}>
-        Todo Application
+        <CreateTodo />
       </p>
     </div>
   );
