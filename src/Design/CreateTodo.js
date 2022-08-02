@@ -2,42 +2,32 @@ import React from "react";
 import Axios from "axios";
 
 export default function CreateTodo() {
-  const [name, setName] = React.useState("");
-  const [age, setAge] = React.useState(0);
-  const [username, setUsername] = React.useState("");
-//   React.useEffect(() => {
-//     Axios.get("http://localhost:3001/getUsers").then((responce) => {
-//       setList(responce.data);
-//     });
-//   }, []);
-  const createUser = () => {
-    Axios.post("http://localhost:3001/createUser", {
-      name: name,
-      age: age,
-      username: username,
+  const [title, setTitle] = React.useState("");
+  const [discription, setDiscription] = React.useState("");
+  const createTodo = () => {
+    Axios.post("http://localhost:3001/createTodo", {
+      title: title,
+      discription: discription,
     }).then((responce) => {
-      alert("user Created");
+      alert("Todo Created");
     });
   };
   return (
     <div>
-      <div>
+      <div style={{ padding: "10px" }}>
         <input
           type="text"
-          placeholder="name"
-          onChange={(e) => setName(e.target.value)}
+          placeholder="title"
+          onChange={(e) => setTitle(e.target.value)}
         />
         <input
           type="text"
-          placeholder="age"
-          onChange={(e) => setAge(e.target.value)}
+          placeholder="discription"
+          onChange={(e) => setDiscription(e.target.value)}
         />
-        <input
-          type="text"
-          placeholder="username"
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <button onClick={createUser}>Create user</button>
+        <button onClick={createTodo} style={{ margin: "10px 20px" }}>
+          Create Todo
+        </button>
       </div>
     </div>
   );
