@@ -1,10 +1,13 @@
 import React from "react";
+import Axios from "axios";
 
 export default function Todos() {
-  const [todo, setTodo] = React.useState([
-    { title: "title 1", discription: "discription 01" },
-    { title: "title 1", discription: "discription 01" },
-  ]);
+  const [todo, setTodo] = React.useState([]);
+  React.useEffect(() => {
+    Axios.get("http://localhost:3001/getTodos").then((responce) => {
+      setTodo(responce.data);
+    });
+  }, []);
   return (
     <div style={{ padding: "10px 80px" }}>
       {todo.map((todo) => {
